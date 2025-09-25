@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>神来的2048</title>
+
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+
+        body {
+            margin: 0;
+        }
+
+        .container {
+            position: relative;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+
+            background-color: rgb(236, 127, 49);
+            height: 408px;
+            width: 408px;
+            padding: 8px;
+
+            font-size: 0;
+        }
+
+        .block {
+            display: inline-block;
+            width: 96px;
+            height: 96px;
+            background-color: aqua;
+            margin-left: 8px;
+            font-size: 14px;
+        }
+
+        .block:first-child {
+            margin-left: 0;
+        }
+
+        .row {
+            margin-top: 8px;
+        }
+
+        .row:first-child {
+            margin-top: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+        </div>
+        <div class="row">
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+        </div>
+        <div class="row">
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+        </div>
+        <div class="row">
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+        </div>
+    </div>
+        <script src="./h2.js"></script>
+
+</body>
+
+</html>
