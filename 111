@@ -1,0 +1,11 @@
+#include<stdio.h>
+int main()
+{
+    int num;
+    if(scanf("%d",&num)!=1){
+       printf("输入错误！\n");
+       return 1;
+   }
+    printf("%d %d %d",num%10,(num%100)/10,num/100);
+    return 0;
+}
