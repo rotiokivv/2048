@@ -146,25 +146,41 @@ function down() {
     }
 }
 
-function generateRandomBlock(){
+function generateRandomBlock() {
     const arr = []
-    for(let i = 0; i < state.length; i++){
-        if (state[i] === 0){
+    for (let i = 0; i < state.length; i++) {
+        if (state[i] === 0) {
             arr.push(i)
         }
 
     }
-    const index = Math.floor(Math.random()*arr.length)
+    const index = Math.floor(Math.random() * arr.length)
     state[arr[index]] = 2
 }
 
+// 渲染render
 function render() {
     const elements = document.getElementsByClassName("block")
     console.log(elements)
     const arr = Array.from(elements)
     console.log(arr)
     for (let i = 0; i < arr.length; i++) {
-        arr[i].textContent = state[i]
+            const list = Array.from(arr[i].classList)
+            const numClass = list.find(c => c.startsWith("num"))
+            arr[i].classList.remove(numClass)
+
+        if (state[i] == 0) 
+        {
+            arr[i].textContent = ""
+            arr[i].classList.remove("color")
+
+        }
+        else 
+        {
+            arr[i].textContent = state[i]
+            arr[i].classList.add("color")
+            arr[i].classList.add("num" + state[i])
+        }
     }
 }
 render()
@@ -187,5 +203,5 @@ window.addEventListener("keydown", function (event) {
     render()
 
 })
-// 哦baby在你左右
+
 
