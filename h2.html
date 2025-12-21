@@ -6,8 +6,7 @@
     <title>神来的2048</title>
 
     <style>
-        html,
-        body {
+        html, body {
             height: 100%;
             background-color: #F9F7EF;
             color: rgb(117, 100, 82);
@@ -16,14 +15,18 @@
 
         body {
             margin: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            /* y轴居中 */
+            align-items: center;
+            /* x轴居中 */
+            justify-content: center;
+
         }
 
         /* 容器 */
         .container {
-            position: relative;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
             display: flex;
             gap: 8px;
             flex-direction: column;
@@ -84,12 +87,53 @@
 
         .block.color.num64 {
             background-color: #F45935;
+
         }
+
+        /* 分数 */
+        .score{
+            background-color: #E9E6D8;
+            border-radius: 8px;
+            width: fit-content;
+            padding: 4px;
+            margin: 0 auto;
+            margin-top: 8px;
+
+        }
+
+        /* 移动次数 */
+        .moveCount{
+            background-color: #E9E6D8;
+            border-radius: 8px;
+            width: fit-content;
+            padding: 4px;
+            margin: 0 auto;
+            margin-top: 8px;
+        }
+
+        /* 重新开始 */
+        .restartBtn{
+            display: none;
+
+        }
+
+        .restartBtn.show{
+            display: inline;
+        }
+
+
+
+
     </style>
 </head>
 
 <body>
-
+    <div class="score">
+        分数：0
+    </div>
+    <div class="moveCount">
+        移动次数：0
+    </div>
     <div class="container">
         <div class="row">
             <div class="block"></div>
@@ -116,6 +160,9 @@
             <div class="block"></div>
         </div>
     </div>
+    <button class="restartBtn" onclick="restartGame()">
+        重新开始
+    </button>
     <script src="./h2.js"></script>
 
 </body>
